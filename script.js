@@ -126,70 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (footerText) {
         footerText.innerHTML = footerText.innerHTML.replace('2024', currentYear);
     }
-    
-    // Initialize visitor counter
-    initVisitorCounter();
 });
-
-// Visitor counter functionality
-function initVisitorCounter() {
-    const visitCountElement = document.getElementById('visitCount');
-    
-    if (visitCountElement) {
-        // Get current visit count from localStorage
-        let visitCount = localStorage.getItem('duongvu-led-visits');
-        
-        // Initialize if first visit
-        if (!visitCount) {
-            visitCount = 0;
-        } else {
-            visitCount = parseInt(visitCount);
-        }
-        
-        // Check if this is a new visit (using session storage)
-        const isNewVisit = !sessionStorage.getItem('current-visit');
-        
-        if (isNewVisit) {
-            // Increment visit count for new visits
-            visitCount++;
-            
-            // Store updated count
-            localStorage.setItem('duongvu-led-visits', visitCount);
-            
-            // Mark this session as visited
-            sessionStorage.setItem('current-visit', 'true');
-        }
-        
-        // Display count with animation
-        animateCounter(visitCountElement, visitCount);
-    }
-}
-
-// Animate counter with counting effect
-function animateCounter(element, targetCount) {
-    let currentCount = 0;
-    const increment = Math.max(1, Math.ceil(targetCount / 50));
-    const duration = 1000; // 1 second
-    const stepTime = duration / (targetCount / increment);
-    
-    const timer = setInterval(() => {
-        currentCount += increment;
-        
-        if (currentCount >= targetCount) {
-            currentCount = targetCount;
-            clearInterval(timer);
-        }
-        
-        element.textContent = currentCount.toLocaleString('vi-VN');
-    }, stepTime);
-}
-
-// Reset visit counter (for testing - can be removed)
-function resetVisitCounter() {
-    localStorage.removeItem('duongvu-led-visits');
-    sessionStorage.removeItem('current-visit');
-    location.reload();
-}
 
 // Lazy loading for images
 document.addEventListener('DOMContentLoaded', () => {
@@ -260,11 +197,11 @@ function orderProduct(productName, power, connection, price) {
     message += `🔸 Giá: ${price}\n\n`;
     message += `Bạn hãy tư vấn thêm cho tôi nhé. Cảm ơn bạn!\n\n`;
     
-    // Facebook page URL (thay bằng link Facebook thật của bạn)
-    const facebookPageURL = 'https://www.facebook.com/duongvuled';
+    // Facebook cá nhân thật của Dương Vũ
+    const facebookPageURL = 'https://www.facebook.com/duongvu.228386';
     
-    // Create Facebook Messenger URL
-    const messengerURL = `https://m.me/duongvuled?text=${encodeURIComponent(message)}`;
+    // Create Facebook Messenger URL với username cá nhân
+    const messengerURL = `https://m.me/duongvu.228386?text=${encodeURIComponent(message)}`;
     
     // Open in new tab
     window.open(messengerURL, '_blank');

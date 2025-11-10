@@ -831,29 +831,6 @@ h4 {
     color: #9ca3af;
 }
 
-.visitor-counter {
-    margin-bottom: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    color: #2563eb;
-    font-weight: 500;
-}
-
-.visitor-counter i {
-    font-size: 1.1rem;
-}
-
-.visitor-counter span {
-    color: #9ca3af;
-}
-
-#visitCount {
-    color: #2563eb;
-    font-weight: 600;
-}
-
 /* Back to Top Button */
 .back-to-top {
     position: fixed;
@@ -1224,13 +1201,6 @@ h4 {
     .footer-section ul li {
         line-height: 1.6;
         word-wrap: break-word;
-    }
-    
-    .visitor-counter {
-        flex-direction: row;
-        gap: 6px;
-        font-size: 0.9rem;
-        justify-content: center;
     }
     
     .contact-form {
