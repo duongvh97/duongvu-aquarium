@@ -129,27 +129,27 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Lazy loading for images
-document.addEventListener('DOMContentLoaded', () => {
-    const images = document.querySelectorAll('img');
+// document.addEventListener('DOMContentLoaded', () => {
+//     const images = document.querySelectorAll('img');
     
-    const imageObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const img = entry.target;
-                img.style.opacity = '0';
-                img.style.transition = 'opacity 0.3s ease';
+//     const imageObserver = new IntersectionObserver((entries, observer) => {
+//         entries.forEach(entry => {
+//             if (entry.isIntersecting) {
+//                 const img = entry.target;
+//                 img.style.opacity = '0';
+//                 img.style.transition = 'opacity 0.3s ease';
                 
-                img.addEventListener('load', () => {
-                    img.style.opacity = '1';
-                });
+//                 img.addEventListener('load', () => {
+//                     img.style.opacity = '1';
+//                 });
                 
-                observer.unobserve(img);
-            }
-        });
-    });
+//                 observer.unobserve(img);
+//             }
+//         });
+//     });
     
-    images.forEach(img => imageObserver.observe(img));
-});
+//     images.forEach(img => imageObserver.observe(img));
+// });
 
 // WhatsApp integration (alternative to Zalo)
 function openWhatsApp(phone, message) {
@@ -208,4 +208,5 @@ function orderProduct(productName, power, connection, price) {
     
     // Track order clicks
     console.log('Product order:', productName, price);
+
 }
